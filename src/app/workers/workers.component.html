@@ -1,0 +1,38 @@
+<router-outlet></router-outlet>
+
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h1>{{title}}</h1>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-12 mb-3">
+            <input type="text" class="form-control" [(ngModel)]='searchStr'
+                placeholder="Поиск работника по фамилии и имени">
+        </div>
+        <div class="col-5 mb-3 mt-2">
+            <div>Сортировка по
+                <select class="change" [(ngModel)]="sorst">
+                    <option [ngValue]="1">ID</option>
+                    <option [ngValue]="2">Возраст</option>
+                </select>
+                Способ сортировки
+                <select class="change" [(ngModel)]="typeSort">
+                    <option [ngValue]="1">По убыванию</option>
+                    <option [ngValue]="2">По возрастанию</option>
+                </select>
+            </div>
+        </div>
+        <button class="btn btn-primary mb-3 mr-3" (click)='sourt(sorst, typeSort)'>Применить</button>
+        <button class="btn btn-primary text-right mb-3" (click)='onAddWorker()'>Добавить сотрудника</button>
+    </div>
+    <app-worker-list [title]="'Отдел IT'" [workers]="getByType(myWorkerType.programmer) | searchpipe: searchStr"
+        (deleteWorker)="onDeleteWorker($event)"></app-worker-list>
+    <app-worker-list [title]="'Отдел продаж'" [workers]="getByType(myWorkerType.sales)  | searchpipe: searchStr"
+        (deleteWorker)="onDeleteWorker($event)"></app-worker-list>
+    <app-worker-list [title]="'Отдел доставки'" [workers]="getByType(myWorkerType.delivery)  | searchpipe: searchStr"
+        (deleteWorker)="onDeleteWorker($event)"></app-worker-list>
+    <app-worker-list [title]="'Юридический отдел'" [workers]="getByType(myWorkerType.lawyers)  | searchpipe: searchStr"
+        (deleteWorker)="onDeleteWorker($event)"></app-worker-list>
+</div>

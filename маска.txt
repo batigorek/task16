@@ -1,0 +1,1 @@
+[textMask]="{mask: mask}"

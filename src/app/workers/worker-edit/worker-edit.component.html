@@ -1,0 +1,67 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" [style.width]="'13%'">Фамилия</th>
+            <th scope="col" [style.width]="'11%'">Имя</th>
+            <th scope="col" [style.width]="'12%'">Отчество</th>
+            <th scope="col" [style.width]="'14%'">Дата рождения</th>
+            <th scope="col" [style.width]="'13%'">Телефон</th>
+            <th scope="col" [style.width]="'12%'">Почта</th>
+            <th scope="col" [style.width]="'5%'"></th>
+            <th scope="col" [style.width]="'10%'">Подтвердить</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td [formGroup]="workerForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Фамилия"
+                    formControlName="surname" />
+            </div>
+        </td>
+        <td [formGroup]="workerForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Имя"
+                    formControlName="name" />
+            </div>
+        </td>
+        <td [formGroup]="workerForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Отчество"
+                    formControlName="patronymic" />
+            </div>
+        </td>
+        <td [formGroup]="workerForm">
+            <div class="col-13">
+                <input type="date" class="form-control" placeholder="Дата рождения"
+                    formControlName="date" min="1940.01.01" max="2010.12.31"/>
+            </div>
+        </td>
+        <td [formGroup]="workerForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Телефон"
+                    formControlName="phone" [textMask]="{mask: mask}" />
+            </div>
+        </td>
+        <td [formGroup]="workerForm">
+            <div class="col-13">
+                <input type="text" class="form-control" placeholder="Почта" type="email"
+                    formControlName="email"/>
+            </div>
+        </td>
+        <td [formGroup]="workerForm">
+            <select class="change" formControlName="type">
+        <option [ngValue]="myWorkerType.programmer">Отдел IT</option>
+        <option [ngValue]="myWorkerType.sales">Отдел продаж</option>
+        <option [ngValue]="myWorkerType.delivery">Отдел доставки</option>
+        <option [ngValue]="myWorkerType.lawyers">Юридический отдел</option>
+        </select>
+        </td>
+        <td>
+            <button (click)="onDeleteWorker()" class="btn btn-outline-danger btn-sm ml-3" *ngIf="id != null">Удалить</button>
+        </td>
+        <td>
+            <button class="btn btn-outline-primary btn-sm" (click)="onConfirmName()"
+                [disabled]="workerForm.invalid">Подтвердить</button>
+        </td>
+    </tbody>
+</table>

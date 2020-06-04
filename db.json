@@ -1,0 +1,44 @@
+{
+  "workers": [
+    {
+      "surname": "Лапикова",
+      "name": "Алина",
+      "patronymic": "Евгеньевна",
+      "date": "1999-05-10",
+      "phone": "8(513)548-64-52",
+      "email": "flapikova@gmail.com",
+      "type": 0,
+      "id": 2
+    },
+    {
+      "surname": "Крюкова",
+      "name": "Милена",
+      "patronymic": "Дмитриевна",
+      "date": "2000-11-29",
+      "phone": "8(919)650-93-21",
+      "email": "batigorek@gmail.com",
+      "type": 0,
+      "id": 3
+    },
+    {
+      "surname": "Крюкова",
+      "name": "Кристина",
+      "patronymic": "Дмитриевна",
+      "date": "1997-07-15",
+      "phone": "8(562)365-98-56",
+      "email": "dot@yandex.ru",
+      "type": 3,
+      "id": 4
+    },
+    {
+      "surname": "Алимова",
+      "name": "Айгуль",
+      "patronymic": "Аделевна",
+      "date": "1996-05-31",
+      "phone": "8(548)612-58-65",
+      "email": "alimova@mail.com",
+      "type": 2,
+      "id": 5
+    }
+  ]
+}
